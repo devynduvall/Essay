@@ -43,7 +43,7 @@ Zoom levels are an important aspect to map design because depending on the decis
           minZoom: 5
       });
 
-The way that Peter Aldous is creating the map objects is through the Mapbox API. 
+The way that Peter Aldous is creating the map objects is through the Mapbox API.
 ### Popup Code
       map.on('click', function(e) {
         var features = map.queryRenderedFeatures(e.point, {
@@ -62,3 +62,6 @@ The way that Peter Aldous is creating the map objects is through the Mapbox API.
           '<br><b>Model: </b>' + feature.properties.model)
           .addTo(map);
       });
+This code develops the onclick popups for the FAA data associated with the ADS-B flight path data.
+
+## Analyze
