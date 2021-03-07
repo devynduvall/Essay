@@ -31,3 +31,34 @@ The only way to navigate through the map is by using the zoom level toggle, and 
 ### Zoom Levels
 ![Zoom levels Example](img/zoom.JPG)
 Zoom levels are an important aspect to map design because depending on the decisions of the author in how detailed they want to make the map, changes the uses of that map. This map has a very high level of detail when it comes to zoom levels. The viewer is able to zoom directly to street level and find the paths that were above their homes or places of work. This level of detail furthers the ability for the viewer to find information about themselves and create their own conclusions.
+
+## Code
+### Map Building Code
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGFsZGhvdXMtYmYiLCJhIjoiY2pvN25uY24zMHVzMjN3cHVvdW45enlnZCJ9.fkZVsl0uxcHs2Mw2_iHnJA';
+      var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/paldhous-bf/ckaymc39y0t9r1in23sheabuw',
+          center: [-77.0387238,38.8976763],
+          zoom: z,
+          minZoom: 5
+      });
+
+The way that Peter Aldous is creating the map objects is through the Mapbox API. 
+### Popup Code
+      map.on('click', function(e) {
+        var features = map.queryRenderedFeatures(e.point, {
+          layers: ['this-wkd-clzt2d']
+        });
+
+        if (!features.length) {
+          return;
+        }
+
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup({ offset: [0, -15] })
+          .setLngLat(e.lngLat) // this is the position where the cursor clicked
+          .setHTML('<b>Registration: </b>' + feature.properties.reg + '<br><b>Operator: </b>' + feature.properties.name_edit +
+          '<br><b>Model: </b>' + feature.properties.model)
+          .addTo(map);
+      });
