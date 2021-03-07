@@ -14,4 +14,20 @@ The first map that is shown is the response to Minneapolis during the time windo
 ![Map of Minneapolis](img/Minneapolis.JPG)
 
 ## Map Design
-The choice in basemap and thematic colors is very intentional. The reason for this is to draw the viewer into the map in a way that shocks or provokes a feeling. The use of the dramatic contrast between the thematic colors and the dark basemap create a sense of shock and awe. The dark basemap has very little information besides roadways and towns. The reason for this is to show major throughways and places of interest for officials and civilians. 
+The choice in basemap and thematic colors is very intentional. The reason for this is to draw the viewer into the map in a way that shocks or provokes a feeling. The use of the dramatic contrast between the thematic colors and the dark basemap create a sense of shock and awe. The dark basemap has very little information besides roadways and towns. The reason for this is to show major throughways and places of interest for officials and civilians. Within the map there are three tools that are being used: a search bar, popups, navigation, and zoom levels.
+
+### Search Bar
+![Search Bar Example](img/Search.JPG)
+The use of a search bar is interesting because it allows the viewer to find cities that are closely related to themselves. The viewers are able to search for any major city within the United States and find information that is related to their communities. This is powerful because instead of having a static map with limited information, the viewer is able to make their own decisions and observations.
+
+### Popups
+![Popup Example](img/popup.JPG)
+Popups are used to provide more information to the viewer. In the case of this map the popups are used to provide aircraft registration, operator, and model of aircraft. This is important to the understanding of what types of surveillance was occurring and how moveable the aircraft was. A plane has very different characteristic than a helicopter in its ability to land, hover, and move through a city.
+
+### Navigation
+![Navigation Example](img/Nav.JPG)
+The only way to navigate through the map is by using the zoom level toggle, and dragging with you mouse or finger depending on the device the viewer is using. These are normal ways of interacting with the map.
+
+### Zoom Levels
+![Zoom levels Example](img/zoom.JPG)
+Zoom levels are an important aspect to map design because depending on the decisions of the author in how detailed they want to make the map, changes the uses of that map. This map has a very high level of detail when it comes to zoom levels. The viewer is able to zoom directly to street level and find the paths that were above their homes or places of work. This level of detail furthers the ability for the viewer to find information about themselves and create their own conclusions.
