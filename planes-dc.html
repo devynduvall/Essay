@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Aerial surveillance</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.js"></script>
+<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.css" rel="stylesheet" />
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js"></script>
+<link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.css"
+    type="text/css"
+/>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<style>
+	body { margin: 0; padding: 0; overflow: hidden; 
+    font-family: 'basier_square_regular';}
+  body * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+          @font-face {
+            font-family: 'basier_square_regular';
+            src: url('/assets/webfonts/basiersquare-regular-webfont.eot');
+            src: url('/assets/webfonts/basiersquare-regular-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/webfonts/basiersquare-regular-webfont.woff2') format('woff2'),
+                 url('/assets/webfonts/basiersquare-regular-webfont.woff') format('woff'),
+                 url('/assets/webfonts/basiersquare-regular-webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+
+        }
+
+        @font-face {
+            font-family: 'basier_square_bold';
+            src: url('/assets/webfonts/basiersquare-bold-webfont.eot');
+            src: url('/assets/webfonts/basiersquare-bold-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/webfonts/basiersquare-bold-webfont.woff2') format('woff2'),
+                 url('/assets/webfonts/basiersquare-bold-webfont.woff') format('woff'),
+                 url('/assets/webfonts/basiersquare-bold-webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+          }
+
+  #legend {
+        position: absolute;
+        bottom: 30px;
+        left:10px;
+        color: #ffffff;
+        background-color: #68686800;
+      } 
+    
+    #legend span {
+      opacity: 0.9;
+    }
+
+    .dot {
+      height: 7px;
+      width: 7px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <div id="legend">
+      <span class="dot" style="background:#fc6e22;"></span> Local&nbsp;
+      <span class="dot" style="background:#ffff66;"></span> State&nbsp; 
+      <span class="dot" style="background:#c34cf6;"></span> Federal&nbsp; 
+      <span class="dot" style="background:#ff1492;"></span> Military&nbsp;
+    </div>
+
+    <script>
+
+      // zoom out one level on smaller screens
+      var devWidth = $(window).width()
+          if (devWidth < 500) {
+          z = 10
+          } else {
+          z =  11
+        }
+
+      // mapboxgl.clearStorage();
+
+    	mapboxgl.accessToken = 'pk.eyJ1IjoicGFsZGhvdXMtYmYiLCJhIjoiY2pvN25uY24zMHVzMjN3cHVvdW45enlnZCJ9.fkZVsl0uxcHs2Mw2_iHnJA';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/paldhous-bf/ckaymc39y0t9r1in23sheabuw',
+            center: [-77.0387238,38.8976763],
+            zoom: z,
+            minZoom: 5
+        });
+
+        // const geocoder = new MapboxGeocoder({
+        // accessToken: mapboxgl.accessToken,
+        // // limit results to US
+        // country: 'us'
+        // });
+
+        // Add geocoder
+        // map.addControl(geocoder, 'top-left');
+        // Add zoom controls
+        map.addControl(new mapboxgl.NavigationControl({showCompass: false}), 'bottom-right');
+        
+        // Disable scroll zooming
+        map.scrollZoom.disable();
+        // Disable map rotation using touch rotation gesture
+        map.touchZoomRotate.disableRotation();
+
+        map.on('click', function(e) {
+          var features = map.queryRenderedFeatures(e.point, {
+            layers: ['this-wkd-clzt2d'] 
+          });
+
+          if (!features.length) {
+            return;
+          }
+
+          var feature = features[0];
+
+          var popup = new mapboxgl.Popup({ offset: [0, -15] })
+            .setLngLat(e.lngLat) // this is the position where the cursor clicked
+            .setHTML('<b>Registration: </b>' + feature.properties.reg + '<br><b>Operator: </b>' + feature.properties.name_edit +
+            '<br><b>Model: </b>' + feature.properties.model)
+            .addTo(map);
+        });
+
+        
+    </script>
+
+</body>
+</html>

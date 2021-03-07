@@ -1,1 +1,11 @@
-# Essay
+
+# Surveillance Planes During Protests
+
+The map that is going to be discussed in this project was developed by Peter Aldhous. The maps in the article written by Peter show the plane surveillance by the local, state, federal and military during the civil unrest after George Floyd’s murder in Minneapolis. The country erupted in protest and the government had to act to ensure the health and safety of everyone involved. These maps, made by Peter Aldhous, reflect the level of security that was occurring during this time.
+> Surveillance planes are always in action over the nation. To give an overview of the airborne response to the current civil unrest, we mapped flights by local police, state and federal law enforcement, and military planes from 7 p.m. Central Time on Friday, May 29, to 7 p.m. Central Time on Sunday, May 31. The locations of large demonstrations coincided with the most intense aircraft activity. Peter Aldhous
+
+This data was collected soon after the initial protests occurred in the United States. With the ability to distinguish between local, state, federal, and military planes give a greater sense of who was involved and to what extent each branch of the government responded.
+All the data that was collected for the creation of these maps was found from the [Federal Aviation Administration](https://www.faa.gov/licenses_certificates/aircraft_certification/aircraft_registry/releasable_aircraft_download/) , or FAA. The FAA keeps flight path records of every aircraft that is flying over US Airspace. While the FAA does not have flight tracking data, [ADS-B Exchange](https://www.adsbexchange.com/)  tracks physical tracks of aircraft without any filtering.
+>ADS-B Exchange differs from typical flight tracking sites in two primary ways.
+First and foremost ADS-B Exchange does not participate in the filtering performed by most other flight tracking websites which do not share data on military or certain private aircraft. Because ADS-B Exchange does not use any FAA data there are no FAA BARR/LADD, military, or other “filters” preventing you from seeing the the data you collected.  ADS-B Exchange simply does not accept payment or requests to remove aircraft from public tracking!
+Second, we are a community. The data we have comes from volunteers, which is supplied back to the community through APIs. Donations are appreciated as they are used to help cover the costs of the infrastructure, archive, and all of the great things you see when using our site.
