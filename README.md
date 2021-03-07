@@ -33,6 +33,9 @@ The only way to navigate the map is by using the zoom level toggle and dragging 
 Zoom levels are an essential aspect to map design because, depending on the author's decisions in how detailed they want to make the map, it changes the map's uses. This map has a very high level of detail when it comes to zoom levels. The viewer can zoom directly to the street level and find the paths above their homes or workplaces. This detailed level furthers the viewer's ability to find information about themselves and create their conclusions.
 
 ## Code
+### Data Flow
+The data within the map has been mainly done through the use of various API's. The API's that have been used are FAA's flight data, ADS-B Exchange flight path API, and Mapbox basemap API. All of these data sources are used within the code of the maps.
+
 ### Map Building Code
     mapboxgl.accessToken = 'pk.eyJ1IjoicGFsZGhvdXMtYmYiLCJhIjoiY2pvN25uY24zMHVzMjN3cHVvdW45enlnZCJ9.fkZVsl0uxcHs2Mw2_iHnJA';
       var map = new mapboxgl.Map({
