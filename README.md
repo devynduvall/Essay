@@ -9,3 +9,9 @@ All the data that was collected for the creation of these maps was found from th
 >ADS-B Exchange differs from typical flight tracking sites in two primary ways.
 First and foremost ADS-B Exchange does not participate in the filtering performed by most other flight tracking websites which do not share data on military or certain private aircraft. Because ADS-B Exchange does not use any FAA data there are no FAA BARR/LADD, military, or other “filters” preventing you from seeing the the data you collected.  ADS-B Exchange simply does not accept payment or requests to remove aircraft from public tracking!
 Second, we are a community. The data we have comes from volunteers, which is supplied back to the community through APIs. Donations are appreciated as they are used to help cover the costs of the infrastructure, archive, and all of the great things you see when using our site.
+
+The first map that is shown is the response to Minneapolis during the time window of 7:00pm May 29 to 7:00pm May 31. This map sets the scene of why this story is important for people interested in government response to civil unrest, aircraft tracking, and the safety of the communities that live within these cities. Minneapolis had a huge presence of surveillance occurring during this first weekend of protests.
+![Map of Minneapolis](img/Minneapolis.JPG)
+
+## Map Design
+The choice in basemap and thematic colors is very intentional. The reason for this is to draw the viewer into the map in a way that shocks or provokes a feeling. The use of the dramatic contrast between the thematic colors and the dark basemap create a sense of shock and awe. The dark basemap has very little information besides roadways and towns. The reason for this is to show major throughways and places of interest for officials and civilians. 
